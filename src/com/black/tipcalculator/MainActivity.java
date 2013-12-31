@@ -8,8 +8,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 public class MainActivity extends Activity {
-	public static final double tenPercent = .1;
 	public static final double fifteenPercent = .15;
+	public static final double eighteenPercent = .18;
 	public static final double twentyPercent = .2;
 	public double totalTip;
 	public double totalAmount;
@@ -28,12 +28,12 @@ public class MainActivity extends Activity {
         return true;
     }
     
-    public void calculateTenPercent(View view) {
-    	this.caclulateTip(tenPercent);
-    }
-    
     public void calculateFifteenPercent(View view) {
     	this.caclulateTip(fifteenPercent);
+    }
+    
+    public void calculateEighteenPercent(View view) {
+    	this.caclulateTip(eighteenPercent);
     }
     
     public void calculateTwentyPercent(View view) {

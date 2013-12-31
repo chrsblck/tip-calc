@@ -23,18 +23,7 @@
 
         <requestFocus />
     </EditText>
-
-    <Button
-        android:id="@+id/button1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/editText1"
-        android:layout_below="@+id/editText1"
-        android:layout_marginTop="22dp"
-        android:text="@string/ten_percent"
-        android:textColor="#FFFFFF"
-        android:onClick="calculateTenPercent" />
-
+    
     <Button
         android:id="@+id/button3"
         android:layout_width="wrap_content"
@@ -47,24 +36,34 @@
         android:onClick="calculateTwentyPercent" />
 
     <Button
+        android:id="@+id/button1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editText1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="24dp"
+        android:onClick="calculateEighteenPercent"
+        android:text="@string/eighteen_percent"
+        android:textColor="#FFFFFF" />
+
+    <Button
         android:id="@+id/button2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBaseline="@+id/button1"
         android:layout_alignBottom="@+id/button1"
-        android:layout_centerHorizontal="true"
+        android:layout_alignLeft="@+id/editText1"
+        android:onClick="calculateFifteenPercent"
         android:text="@string/fifteen_percent"
-        android:textColor="#FFFFFF"
-        android:onClick="calculateFifteenPercent" />
+        android:textColor="#FFFFFF" />
 
     <TextView
         android:id="@+id/textView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/button1"
-        android:layout_alignRight="@+id/button3"
+        android:layout_alignLeft="@+id/button2"
         android:layout_below="@+id/button1"
-        android:layout_marginTop="22dp"
+        android:layout_marginTop="16dp"
         android:background="@drawable/textview_back"
         android:ems="10"
         android:hint="@string/tip_hint"
@@ -78,9 +77,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/textView1"
-        android:layout_alignRight="@+id/button3"
         android:layout_centerVertical="true"
-        android:hint="@string/total_hint" 
+        android:hint="@string/total_hint"
         android:textColor="#FFFFFF"
         android:textSize="17sp"
         android:textStyle="bold"

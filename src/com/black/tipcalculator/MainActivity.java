@@ -41,9 +41,9 @@ public class MainActivity extends Activity {
     }
     
     public void caclulateTip(double percentage) {
-        EditText editAmount = (EditText)findViewById(R.id.editText1);
-        TextView tipText = (TextView)findViewById(R.id.textView1);
-        TextView totalText = (TextView)findViewById(R.id.textView2);
+        EditText editAmount = (EditText)findViewById(R.id.billAmountText);
+        TextView tipText = (TextView)findViewById(R.id.tipTotalView);
+        TextView totalText = (TextView)findViewById(R.id.totalView);
         float number;
         
         if (!editTextIsEmpty(editAmount)) {

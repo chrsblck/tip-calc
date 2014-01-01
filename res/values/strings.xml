@@ -13,6 +13,11 @@
     <string name="total_hint">Total Amount</string>
     <string name="total_label">Total: $</string>
     <string name="amount_format">%.02f</string>
+    <string name="per_person_total_hint">Total Per Person</string>
+    <string name="per_person_total">Per Person: $</string>
+    <string name="persons_per_party_default">1</string>
+    <string name="minus_person">-</string>
+    <string name="plus_person">+</string>
     
     <color name="charcol">#222222</color>
     

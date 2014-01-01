@@ -8,21 +8,6 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     android:background="@color/charcol"
     tools:context=".MainActivity" >
-
-    <EditText
-        android:id="@+id/billAmountText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="40dp"
-        android:hint="@string/amount_hint"
-        android:textColor="#FFFFFF"
-        android:inputType="numberDecimal"
-        android:ems="10" >
-
-        <requestFocus />
-    </EditText>
     
     <Button
         android:id="@+id/twentyButton"
@@ -57,13 +42,60 @@
         android:text="@string/fifteen_percent"
         android:textColor="#FFFFFF" />
 
+    <EditText
+        android:id="@+id/billAmountText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:ems="10"
+        android:hint="@string/amount_hint"
+        android:inputType="numberDecimal"
+        android:textColor="#FFFFFF" />
+
+    <TextView
+        android:id="@+id/totalView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/totalPerPersonView"
+        android:layout_below="@+id/totalPerPersonView"
+        android:layout_marginTop="22dp"
+        android:hint="@string/total_hint"
+        android:textColor="#FFFFFF"
+        android:textSize="17sp"
+        android:textStyle="bold"
+        android:typeface="monospace" />
+
+    <TextView
+        android:id="@+id/personsPerParty"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_alignLeft="@+id/eighteenButton"
+        android:layout_alignRight="@+id/eighteenButton"
+        android:layout_below="@+id/eighteenButton"
+        android:layout_marginTop="35dp"
+        android:text="@string/persons_per_party_default"
+        android:textColor="#FFFFFF"
+        android:textSize="17sp"
+        android:textStyle="bold"
+        android:typeface="monospace" />
+
+    <Button
+        android:id="@+id/plusPersonButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/personsPerParty"
+        android:layout_alignBottom="@+id/personsPerParty"
+        android:layout_alignLeft="@+id/twentyButton"
+        android:onClick="addPeopleInParty"
+        android:text="@string/plus_person" />
+
     <TextView
         android:id="@+id/tipTotalView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/fifteenButton"
-        android:layout_below="@+id/eighteenButton"
-        android:layout_marginTop="16dp"
+        android:layout_alignRight="@+id/plusPersonButton"
+        android:layout_centerVertical="true"
         android:background="@drawable/textview_back"
         android:ems="10"
         android:hint="@string/tip_hint"
@@ -72,16 +104,27 @@
         android:textStyle="bold"
         android:typeface="monospace" />
 
+    <Button
+        android:id="@+id/minusPersonButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/personsPerParty"
+        android:layout_alignBottom="@+id/personsPerParty"
+        android:layout_alignLeft="@+id/fifteenButton"
+        android:onClick="decrementPeopleInParty"
+        android:text="@string/minus_person" />
+
     <TextView
-        android:id="@+id/totalView"
+        android:id="@+id/totalPerPersonView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/tipTotalView"
-        android:layout_centerVertical="true"
-        android:hint="@string/total_hint"
+        android:layout_below="@+id/tipTotalView"
+        android:layout_marginTop="21dp"
+        android:hint="@string/per_person_total_hint"
         android:textColor="#FFFFFF"
         android:textSize="17sp"
         android:textStyle="bold"
         android:typeface="monospace" />
-
+        
 </RelativeLayout>

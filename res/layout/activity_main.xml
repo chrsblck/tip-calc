@@ -53,32 +53,22 @@
         android:textColor="#FFFFFF" />
 
     <TextView
+        style="@style/CustomDarkTheme"
         android:id="@+id/totalView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/totalPerPersonView"
         android:layout_below="@+id/totalPerPersonView"
         android:layout_marginTop="22dp"
-        android:hint="@string/total_hint"
-        android:textColor="#FFFFFF"
-        android:textSize="17sp"
-        android:textStyle="bold"
-        android:typeface="monospace" />
+        android:hint="@string/total_hint" />
 
     <TextView
+        style="@style/CustomDarkTheme"
         android:id="@+id/personsPerParty"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:gravity="center"
         android:layout_alignLeft="@+id/eighteenButton"
         android:layout_alignRight="@+id/eighteenButton"
         android:layout_below="@+id/eighteenButton"
         android:layout_marginTop="35dp"
-        android:text="@string/persons_per_party_default"
-        android:textColor="#FFFFFF"
-        android:textSize="17sp"
-        android:textStyle="bold"
-        android:typeface="monospace" />
+        android:text="@string/persons_per_party_default" />
 
     <Button
         android:id="@+id/plusPersonButton"
@@ -91,18 +81,13 @@
         android:text="@string/plus_person" />
 
     <TextView
+        style="@style/CustomDarkTheme"
         android:id="@+id/tipTotalView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:layout_alignRight="@+id/plusPersonButton"
         android:layout_centerVertical="true"
         android:background="@drawable/textview_back"
         android:ems="10"
-        android:hint="@string/tip_hint"
-        android:textColor="#FFFFFF"
-        android:textSize="17sp"
-        android:textStyle="bold"
-        android:typeface="monospace" />
+        android:hint="@string/tip_hint" />
 
     <Button
         android:id="@+id/minusPersonButton"
@@ -115,16 +100,11 @@
         android:text="@string/minus_person" />
 
     <TextView
+        style="@style/CustomDarkTheme"
         android:id="@+id/totalPerPersonView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/tipTotalView"
         android:layout_below="@+id/tipTotalView"
         android:layout_marginTop="21dp"
-        android:hint="@string/per_person_total_hint"
-        android:textColor="#FFFFFF"
-        android:textSize="17sp"
-        android:textStyle="bold"
-        android:typeface="monospace" />
-        
+        android:hint="@string/per_person_total_hint" />
+    
 </RelativeLayout>

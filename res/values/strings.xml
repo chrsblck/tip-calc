@@ -18,7 +18,9 @@
     <string name="persons_per_party_default">1</string>
     <string name="minus_person">-</string>
     <string name="plus_person">+</string>
+    <string name="pref_light_theme">Light Theme</string>
+    <string name="pref_light_theme_summ">Use Holo Light Theme</string>
     
     <color name="charcol">#222222</color>
-    
+    <color name="light">#fff3f3f3</color>
 </resources>

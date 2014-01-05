@@ -8,27 +8,54 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     android:background="@color/charcol"
     tools:context=".MainActivity" >
-    
-    <Button
-        android:id="@+id/twentyButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/fifteenButton"
-        android:layout_alignBottom="@+id/fifteenButton"
-        android:layout_alignRight="@+id/billAmountText"
-        android:text="@string/twenty_percent"
-        android:textColor="#FFFFFF"
-        android:onClick="calculateTwentyPercent" />
+
+    <TextView
+        android:id="@+id/totalPerPersonView"
+        style="@style/CustomDarkTheme"
+        android:layout_alignLeft="@+id/tipTotalView"
+        android:layout_alignRight="@+id/tipTotalView"
+        android:layout_below="@+id/tipTotalView"
+        android:layout_marginTop="26dp"
+        android:hint="@string/per_person_total_hint" />
+
+    <TextView
+        android:id="@+id/totalView"
+        style="@style/CustomDarkTheme"
+        android:layout_alignLeft="@+id/totalPerPersonView"
+        android:layout_alignRight="@+id/totalPerPersonView"
+        android:layout_below="@+id/totalPerPersonView"
+        android:layout_marginTop="27dp"
+        android:hint="@string/total_hint" />
+
+    <TextView
+        android:id="@+id/personsPerParty"
+        style="@style/CustomDarkTheme"
+        android:layout_alignBaseline="@+id/minusPersonButton"
+        android:layout_alignBottom="@+id/minusPersonButton"
+        android:layout_alignLeft="@+id/eighteenButton"
+        android:layout_alignRight="@+id/eighteenButton"
+        android:gravity="center"
+        android:text="@string/persons_per_party_default" />
 
     <Button
-        android:id="@+id/eighteenButton"
+        android:id="@+id/minusPersonButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/billAmountText"
+        android:layout_alignLeft="@+id/fifteenButton"
+        android:layout_below="@+id/fifteenButton"
+        android:layout_marginTop="19dp"
+        android:onClick="decrementPeopleInParty"
+        android:text="@string/minus_person" />
+
+    <EditText
+        android:id="@+id/billAmountText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="24dp"
-        android:onClick="calculateEighteenPercent"
-        android:text="@string/eighteen_percent"
+        android:ems="10"
+        android:hint="@string/amount_hint"
+        android:inputType="numberDecimal"
         android:textColor="#FFFFFF" />
 
     <Button
@@ -37,74 +64,51 @@
         android:layout_height="wrap_content"
         android:layout_alignBaseline="@+id/eighteenButton"
         android:layout_alignBottom="@+id/eighteenButton"
-        android:layout_alignLeft="@+id/billAmountText"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="34dp"
         android:onClick="calculateFifteenPercent"
         android:text="@string/fifteen_percent"
-        android:textColor="#FFFFFF" />
+        android:textColor="@color/white" />
 
-    <EditText
-        android:id="@+id/billAmountText"
+    <Button
+        android:id="@+id/twentyButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/eighteenButton"
+        android:layout_alignBottom="@+id/eighteenButton"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="32dp"
+        android:onClick="calculateTwentyPercent"
+        android:text="@string/twenty_percent"
+        android:textColor="@color/white" />
+
+    <Button
+        android:id="@+id/eighteenButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/billAmountText"
         android:layout_centerHorizontal="true"
-        android:ems="10"
-        android:hint="@string/amount_hint"
-        android:inputType="numberDecimal"
-        android:textColor="#FFFFFF" />
-
-    <TextView
-        style="@style/CustomDarkTheme"
-        android:id="@+id/totalView"
-        android:layout_alignLeft="@+id/totalPerPersonView"
-        android:layout_below="@+id/totalPerPersonView"
-        android:layout_marginTop="22dp"
-        android:hint="@string/total_hint" />
-
-    <TextView
-        style="@style/CustomDarkTheme"
-        android:id="@+id/personsPerParty"
-        android:gravity="center"
-        android:layout_alignLeft="@+id/eighteenButton"
-        android:layout_alignRight="@+id/eighteenButton"
-        android:layout_below="@+id/eighteenButton"
-        android:layout_marginTop="35dp"
-        android:text="@string/persons_per_party_default" />
+        android:layout_marginTop="28dp"
+        android:onClick="calculateEighteenPercent"
+        android:text="@string/eighteen_percent"
+        android:textColor="@color/white" />
 
     <Button
         android:id="@+id/plusPersonButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/personsPerParty"
         android:layout_alignBottom="@+id/personsPerParty"
         android:layout_alignLeft="@+id/twentyButton"
         android:onClick="addPeopleInParty"
         android:text="@string/plus_person" />
 
     <TextView
-        style="@style/CustomDarkTheme"
         android:id="@+id/tipTotalView"
+        style="@style/CustomDarkTheme"
+        android:layout_alignLeft="@+id/minusPersonButton"
         android:layout_alignRight="@+id/plusPersonButton"
         android:layout_centerVertical="true"
-        android:background="@drawable/textview_back"
         android:ems="10"
         android:hint="@string/tip_hint" />
-
-    <Button
-        android:id="@+id/minusPersonButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/personsPerParty"
-        android:layout_alignBottom="@+id/personsPerParty"
-        android:layout_alignLeft="@+id/fifteenButton"
-        android:onClick="decrementPeopleInParty"
-        android:text="@string/minus_person" />
-
-    <TextView
-        style="@style/CustomDarkTheme"
-        android:id="@+id/totalPerPersonView"
-        android:layout_alignLeft="@+id/tipTotalView"
-        android:layout_below="@+id/tipTotalView"
-        android:layout_marginTop="21dp"
-        android:hint="@string/per_person_total_hint" />
     
 </RelativeLayout>

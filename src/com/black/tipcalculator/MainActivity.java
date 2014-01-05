@@ -2,14 +2,19 @@ package com.black.tipcalculator;
 
 import android.os.Bundle;
 import android.app.Activity;
-import android.content.Intent;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
 public class MainActivity extends Activity {
+	public static String[] buttons = {
+		"fifteenButton",
+		"eighteenButton",
+		"twentyButton"
+	};
 	public static final double fifteenPercent = .15;
 	public static final double eighteenPercent = .18;
 	public static final double twentyPercent = .2;
@@ -47,17 +52,33 @@ public class MainActivity extends Activity {
     
     public void calculateFifteenPercent(View view) {
     	lastCalculated = fifteenPercent;
+    	highlightButtonClick("fifteenButton");
     	calculateTip(fifteenPercent);
     }
     
     public void calculateEighteenPercent(View view) {
     	lastCalculated = eighteenPercent;
+    	highlightButtonClick("eighteenButton");
     	calculateTip(eighteenPercent);
     }
     
     public void calculateTwentyPercent(View view) {
     	lastCalculated = twentyPercent;
+    	highlightButtonClick("twentyButton");
     	calculateTip(twentyPercent);
+    }
+    
+    public void highlightButtonClick(String id) {
+    	for (String s: buttons) {
+    		int resId = getResources().getIdentifier(s, "id", "com.black.tipcalculator");
+    		Button b = (Button)findViewById(resId);
+    		if (s.equals(id)) {
+    			System.out.println("setting color to blule");
+    			b.setTextColor(getResources().getColor(R.color.blue));
+    		} else {
+    			b.setTextColor(getResources().getColor(R.color.white));
+    		}
+    	}
     }
     
     public int getPeopleInParty() {
